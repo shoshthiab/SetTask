@@ -1,0 +1,19 @@
+﻿@using SatTask.Models
+<a href ="/Course/Add" class="btn btn-primary">Create new course</a>
+<table class=" table table-striped">
+
+    <tr>
+        <th> Name</th>
+        <th>Description</th>
+        <th>Instructor </th>
+    </tr>
+    @foreach(var c in (List<Course>)ViewBag.courses)
+    {
+        <tr>
+            <td>@c.name</td>
+            <td>@c.description </td>
+            <td>@c.instructor </td>
+        </tr>
+    }
+
+     </table>

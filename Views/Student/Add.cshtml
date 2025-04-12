@@ -1,0 +1,19 @@
+﻿<form action="/student/Create">
+	<label>Name</label>
+	<input name="name" />
+
+	<label>email</label>
+	<input name="email" />
+
+	<label> course</label>
+	<select name="courseId">
+		@foreach(var c in CourseDataSourse.courses)
+		{
+			<option value="@c.courseID">@c.name </option>
+			
+		}
+	</select>
+
+	<input type="submit" value="Create" />
+
+</form>

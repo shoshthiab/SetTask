@@ -1,0 +1,35 @@
+﻿@using SatTask.Models
+@model Student 
+
+<form action="/student/update">
+
+	<label>Name</label>
+	@Html.HiddenFor(X=>X.studentId);
+
+	<label>Name</label>
+	<input asp-for="name"/>
+
+	<label>email</label>
+	<input name="email" value="@Model.email" />
+
+	<label>course </label>
+	<select asp-for="course.courseID">
+		@foreach(var c in CourseDataSourse.courses)
+		{
+			@if(c.courseID ==Model.course.courseID)
+			{
+				<option selected value ="@c.courseID">@c.name</option>
+			}else
+			{
+				<option value="@c.courseID">@c.name</option>
+
+			}
+
+		}
+
+
+	</select>
+
+	<input type="submit" value="Update" />
+
+</form>

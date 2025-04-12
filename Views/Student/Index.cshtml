@@ -1,0 +1,26 @@
+﻿@using SatTask.Models
+<a href="/student/Add" class=" btn btn-primary"> create new student </a>
+<table class=" table table-striped">
+    <tbody>
+        <tr>
+            <th>Student Name</th>
+            <th>Student Email</th>
+            <th>Course </th>
+        </tr>
+
+        @foreach (var stu in (List<Student>)ViewBag.students)
+
+        {
+            <tr>
+                <td>@stu.name</td>
+                <td>@stu.email</td>
+                <td>@stu.course.name</td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", "Student", new { stuId = stu.studentId })
+                </td>
+            </tr>
+
+        }
+    </tbody>
+</table>
+

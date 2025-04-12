@@ -1,0 +1,15 @@
+﻿@model Course 
+
+<form action="/Course/Create">
+	<label>name </label>
+	<input asp-for ="name" />
+
+	<label> description </label>
+	<input asp-for="description " />
+
+	<label> instructor </label>
+	<input asp-for="instructor" />
+
+	<input type="submit" value="Create" />
+
+</form>
